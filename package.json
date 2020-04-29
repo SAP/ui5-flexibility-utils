@@ -1,0 +1,28 @@
+{
+  "name": "@ui5/flexibility-utils",
+  "version": "0.1.0",
+  "description": "Utils functions for creating and reading UI5 flexibility entities without a run time",
+  "author": "SAP SE (https://www.sap.com)",
+  "license": "Apache-2.0",
+  "keywords": [
+    "openui5",
+    "sapui5",
+    "ui5",
+    "development",
+    "tool",
+    "ui5 flexibility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sap/ui5-flexibility-utils"
+  },
+  "scripts": {
+    "test": "ava test/**/*.js",
+    "jsdoc": "node_modules/.bin/jsdoc -c ./.jsdoc.config.json -d jsdoc -R README.md"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^3.6.0",
+    "jsdoc": "^3.6.4"
+  }
+}
