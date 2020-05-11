@@ -1,0 +1,5 @@
+@ui5/flexibility-utils uses third-party software or other resources that may be distributed under licenses different than @ui5/flexibility-utils software.
+
+In the event that we overlooked to list required notice, please bring this to our attention by contacting us via this email: opensource@sap.com
+
+------------------------------------------------------------------------------------------

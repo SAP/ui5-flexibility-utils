@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.wdf.sap.corp/D060762/ui5-flexibility-utils.git"
+    "url": "https://github.com/sap/ui5-flexibility-utils"
   },
   "scripts": {
     "test": "ava test/**/*.js",
@@ -22,6 +22,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "ava": "^3.6.0"
+    "ava": "^3.6.0",
+    "jsdoc": "^3.6.4"
   }
 }

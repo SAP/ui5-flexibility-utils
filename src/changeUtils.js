@@ -57,7 +57,6 @@ function getProjectId(manifest, reference) {
 }
 
 function createString(propertyBag) {
-
 	return JSON.stringify({
 		fileName: propertyBag.id || uid().replace(/-/g, "_") + "_" + propertyBag.type,
 		fileType: "change",
@@ -68,7 +67,8 @@ function createString(propertyBag) {
 		content: propertyBag.content || {},
 		selector: {
 			id: propertyBag.controlId,
-			idIsLocal: true
+			idIsLocal: false,
+			type: propertyBag.controlType
 		},
 		layer: propertyBag.isCustomer ? "CUSTOMER_BASE" : "VENDOR",
 		texts: {},
@@ -105,14 +105,14 @@ function createString(propertyBag) {
  * @property {string}	controlId - ID of the control containing all prefixes excluding the application ID prefix
  * @property {string}	type - Change type, i.e. <code>propertyChange</code>
  * @property {Object}	content - Content of the change needed by the corresponding change handler
- * @property {boolean}	isCustomer - Flag if the project is related to a customer project
+ * @property {boolean}	isCustomer - Flag indicating whether the project is related to a customer project
  * @property {string}	sapui5Version - SAPUI5 version for which the change is created
  * @property {string}	creatingTool - Name of the tool calling this function for support reasons
  * @property {string}	id - UID of the change;
  * 							Defined on the first <code>toString</code> function call via the <code>manifest</code>
  * @property {string}	reference - Reference to the application;
  * 							Defined on the first <code>toString</code> function call via the <code>manifest</code>
- * @property {string}	appVersion - Version to the application;
+ * @property {string}	appVersion - Version of the application;
  *		 					Defined on the first <code>toString</code> function call via the <code>manifest</code>
  * @property {string}	creation - String with the creation timestamp;
  * 							Defined on the first <code>toString</code> function call via the <code>manifest</code>
@@ -125,9 +125,9 @@ function createString(propertyBag) {
  * @property {string}  	controlId - ID of the control containing all prefixes excluding the application ID prefix
  * @property {string}  	type - Change type, i.e. <code>propertyChange</code>
  * @property {Object}  	[content] - Content of the change needed by the corresponding change handler
- * @property {boolean} 	isCustomer - Flag if the project is related to a customer project
+ * @property {boolean} 	isCustomer - Flag indicating whether the project is related to a customer project
  * @property {string}  	[sapui5Version] - SAPUI5 version for which the change is created
- * @property {string}  	creatingTool - Name of the tool calling this function for support reasons
+ * @property {string}  	creatingTool - Name of the tool calling this function (this is needed for support reasons)
  */
 
 module.exports = {
@@ -158,7 +158,7 @@ module.exports = {
 			!change.support.generator ||
 			!change.creation
 		) {
-			throw Error("parsed object contains not all required parameters");
+			throw Error("Parsed object does not contain all required parameters");
 		}
 
 		return {
@@ -169,6 +169,7 @@ module.exports = {
 			projectId: change.projectId,
 			type: change.changeType,
 			controlId: change.selector.id,
+			controlType: change.selector.type,
 			isCustomer: change.layer === "CUSTOMER_BASE",
 			creatingTool: change.support.generator.replace(CHANGE_UTILS_PREFIX, ""),
 			content: change.content,
