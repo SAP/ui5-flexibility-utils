@@ -1,9 +1,9 @@
 # @ui5/flexibility-utils
 
 ## Description
-This project provides an API to create SAPUI5 flexibility change files outside of a ui5 run time.
+This project provides an API to create SAPUI5 flexibility change files outside of a OpenUI5 and SAPUI5 run time.
 
-It enables tools to create UI5 flexibility changes without the need of a runtime environment or access to and knowledge about ui5 internals.
+It enables tools to create SAPUI5 flexibility changes without the need of a runtime environment or access to and knowledge about internals.
 
 ## Requirements
 * Node.js
@@ -11,13 +11,10 @@ It enables tools to create UI5 flexibility changes without the need of a runtime
 ## Installation
 ~~~
 npm install --global @ui5/flexibility-utils
-
-# Verify installation
-npm view @ui5/flexibility-utils version
 ~~~
 
 ## Usage
-~~~
+~~~js
 flexibilityUtils = require("@ui5/flexibility-utils");
 let changeDefinitionInCreation = {...}
 let stringifiedChange = flexibilityUtils.change.createChangeString(changeDefinitionInCreation, manifest)
