@@ -3,7 +3,7 @@
 ## Description
 This project provides an API to create SAPUI5 flexibility change files outside of a OpenUI5 and SAPUI5 run time.
 
-It enables tools to create SAPUI5 flexibility changes without the need of a runtime environment or access to and knowledge about internals.
+It enables tools to create SAPUI5 flexibility changes without the need of a run time environment or access to and knowledge about internals.
 
 ## Requirements
 * Node.js
