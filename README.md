@@ -1,9 +1,9 @@
 # @ui5/flexibility-utils
 
 ## Description
-This project provides an API to create SAPUI5 flexibility change files outside of a OpenUI5 and SAPUI5 run time.
+This project provides an API to create SAPUI5 flexibility change files outside of a OpenUI5 and SAPUI5 runtime.
 
-It enables tools to create SAPUI5 flexibility changes without the need of a run time environment or access to and knowledge about internals.
+This API allows you to create UI5 flexibility changes without a UI5 runtime, and without the need to understand how UI5 works internally.
 
 ## Requirements
 * Node.js
@@ -24,7 +24,7 @@ stringifiedChange = flexibilityUtils.change.toString(changeDefinition)
 
 ![Data Flow](./dataflow.jpg)
 
-For more details about the functions and types read the [JSDoc](jsdoc/index.html).
+For more details about the functions and types, see the [JSDoc](jsdoc/index.html).
 
 ## Known Issues
 No issues are currently known.
