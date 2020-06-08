@@ -57,7 +57,6 @@ function getProjectId(manifest, reference) {
 }
 
 function createString(propertyBag) {
-
 	return JSON.stringify({
 		fileName: propertyBag.id || uid().replace(/-/g, "_") + "_" + propertyBag.type,
 		fileType: "change",
@@ -68,7 +67,8 @@ function createString(propertyBag) {
 		content: propertyBag.content || {},
 		selector: {
 			id: propertyBag.controlId,
-			idIsLocal: true
+			idIsLocal: false,
+			type: propertyBag.controlType
 		},
 		layer: propertyBag.isCustomer ? "CUSTOMER_BASE" : "VENDOR",
 		texts: {},
@@ -169,6 +169,7 @@ module.exports = {
 			projectId: change.projectId,
 			type: change.changeType,
 			controlId: change.selector.id,
+			controlType: change.selector.type,
 			isCustomer: change.layer === "CUSTOMER_BASE",
 			creatingTool: change.support.generator.replace(CHANGE_UTILS_PREFIX, ""),
 			content: change.content,

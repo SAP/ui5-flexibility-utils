@@ -38,6 +38,7 @@ const completeChange = {
 	creation: 1585730948833,
 	type: "propertyChange",
 	controlId: "myTable",
+	controlType: "sap.m.Table",
 	projectId: "",
 	isCustomer: true,
 	creatingTool: "ava test",
@@ -51,13 +52,14 @@ const completeChange = {
 const changeInCreation = clone(completeChange, ["id", "reference", "appVersion", "projectId"]);
 
 test("changeUtils parses", (t) => {
-	const change = changeUtils.parse("{\"fileName\":\"id_1585730948833_0_propertyChange\",\"fileType\":\"change\",\"changeType\":\"propertyChange\",\"moduleName\":\"\",\"reference\":\"test.app\",\"packageName\":\"\",\"content\":{\"property\":\"exportToExcel\",\"newValue\":true},\"selector\":{\"id\":\"myTable\",\"idIsLocal\":true},\"layer\":\"CUSTOMER_BASE\",\"texts\":{},\"namespace\":\"apps/test.app/changes/\",\"projectId\":\"test.app\",\"creation\":1585730948833,\"originalLanguage\":\"\",\"support\":{\"sapui5Version\": \"1.77.0\",\"generator\":\"changeUtils: ava test\",\"service\":\"\",\"user\":\"\",\"sourceChangeFileName\":\"\",\"compositeCommand\":\"\"},\"oDataInformation\":{},\"dependentSelector\":{},\"validAppVersions\":{\"from\":\"1.0.0\",\"to\":\"1.0.0\",\"creation\":\"1.0.0\"},\"jsOnly\":false,\"variantReference\":\"\",\"appDescriptorChange\":false}");
+	const change = changeUtils.parse("{\"fileName\":\"id_1585730948833_0_propertyChange\",\"fileType\":\"change\",\"changeType\":\"propertyChange\",\"moduleName\":\"\",\"reference\":\"test.app\",\"packageName\":\"\",\"content\":{\"property\":\"exportToExcel\",\"newValue\":true},\"selector\":{\"id\":\"myTable\",\"idIsLocal\":false,\"type\":\"sap.m.Table\"},\"layer\":\"CUSTOMER_BASE\",\"texts\":{},\"namespace\":\"apps/test.app/changes/\",\"projectId\":\"test.app\",\"creation\":1585730948833,\"originalLanguage\":\"\",\"support\":{\"sapui5Version\": \"1.77.0\",\"generator\":\"changeUtils: ava test\",\"service\":\"\",\"user\":\"\",\"sourceChangeFileName\":\"\",\"compositeCommand\":\"\"},\"oDataInformation\":{},\"dependentSelector\":{},\"validAppVersions\":{\"from\":\"1.0.0\",\"to\":\"1.0.0\",\"creation\":\"1.0.0\"},\"jsOnly\":false,\"variantReference\":\"\",\"appDescriptorChange\":false}");
 	t.deepEqual(change, {
 		id: "id_1585730948833_0_propertyChange",
 		type: "propertyChange",
 		reference: "test.app",
 		appVersion: "1.0.0",
 		controlId: "myTable",
+		controlType: "sap.m.Table",
 		isCustomer: true,
 		creatingTool: "ava test",
 		creation: 1585730948833,
@@ -106,7 +108,7 @@ test("changeUtils createChangeString create a change (manifest is provided)", (t
 		"\"fileName\":\"id_123_0_propertyChange\""
 	);
 	stringifiedChange = stringifiedChange.replace(/"creation":[0-9]*/, "\"creation\":0");
-	t.deepEqual(stringifiedChange, "{\"fileName\":\"id_123_0_propertyChange\",\"fileType\":\"change\",\"changeType\":\"propertyChange\",\"moduleName\":\"\",\"reference\":\"test.app\",\"packageName\":\"\",\"content\":{\"property\":\"exportToExcel\",\"newValue\":true},\"selector\":{\"id\":\"myTable\",\"idIsLocal\":true},\"layer\":\"CUSTOMER_BASE\",\"texts\":{},\"namespace\":\"apps/test.app/changes/\",\"projectId\":\"\",\"creation\":0,\"originalLanguage\":\"\",\"support\":{\"generator\":\"changeUtils: ava test\",\"service\":\"\",\"user\":\"\",\"sourceChangeFileName\":\"\",\"compositeCommand\":\"\"},\"oDataInformation\":{},\"dependentSelector\":{},\"validAppVersions\":{\"from\":\"1.0.0\",\"to\":\"1.0.0\",\"creation\":\"1.0.0\"},\"jsOnly\":false,\"variantReference\":\"\",\"appDescriptorChange\":false}", "then the change string is generated correct");
+	t.deepEqual(stringifiedChange, "{\"fileName\":\"id_123_0_propertyChange\",\"fileType\":\"change\",\"changeType\":\"propertyChange\",\"moduleName\":\"\",\"reference\":\"test.app\",\"packageName\":\"\",\"content\":{\"property\":\"exportToExcel\",\"newValue\":true},\"selector\":{\"id\":\"myTable\",\"idIsLocal\":false,\"type\":\"sap.m.Table\"},\"layer\":\"CUSTOMER_BASE\",\"texts\":{},\"namespace\":\"apps/test.app/changes/\",\"projectId\":\"\",\"creation\":0,\"originalLanguage\":\"\",\"support\":{\"generator\":\"changeUtils: ava test\",\"service\":\"\",\"user\":\"\",\"sourceChangeFileName\":\"\",\"compositeCommand\":\"\"},\"oDataInformation\":{},\"dependentSelector\":{},\"validAppVersions\":{\"from\":\"1.0.0\",\"to\":\"1.0.0\",\"creation\":\"1.0.0\"},\"jsOnly\":false,\"variantReference\":\"\",\"appDescriptorChange\":false}", "then the change string is generated correct");
 });
 
 test("changeUtils createChangeString create a change (manifest is provided based on fiori elements)", (t) => {
@@ -118,10 +120,10 @@ test("changeUtils createChangeString create a change (manifest is provided based
 		"\"fileName\":\"id_123_0_propertyChange\""
 	);
 	stringifiedChange = stringifiedChange.replace(/"creation":[0-9]*/, "\"creation\":0");
-	t.deepEqual(stringifiedChange, "{\"fileName\":\"id_123_0_propertyChange\",\"fileType\":\"change\",\"changeType\":\"propertyChange\",\"moduleName\":\"\",\"reference\":\"test.app\",\"packageName\":\"\",\"content\":{\"property\":\"exportToExcel\",\"newValue\":true},\"selector\":{\"id\":\"myTable\",\"idIsLocal\":true},\"layer\":\"CUSTOMER_BASE\",\"texts\":{},\"namespace\":\"apps/test.app/changes/\",\"projectId\":\"test.app\",\"creation\":0,\"originalLanguage\":\"\",\"support\":{\"generator\":\"changeUtils: ava test\",\"service\":\"\",\"user\":\"\",\"sourceChangeFileName\":\"\",\"compositeCommand\":\"\"},\"oDataInformation\":{},\"dependentSelector\":{},\"validAppVersions\":{\"from\":\"1.0.0\",\"to\":\"1.0.0\",\"creation\":\"1.0.0\"},\"jsOnly\":false,\"variantReference\":\"\",\"appDescriptorChange\":false}", "then the change string is generated correct");
+	t.deepEqual(stringifiedChange, "{\"fileName\":\"id_123_0_propertyChange\",\"fileType\":\"change\",\"changeType\":\"propertyChange\",\"moduleName\":\"\",\"reference\":\"test.app\",\"packageName\":\"\",\"content\":{\"property\":\"exportToExcel\",\"newValue\":true},\"selector\":{\"id\":\"myTable\",\"idIsLocal\":false,\"type\":\"sap.m.Table\"},\"layer\":\"CUSTOMER_BASE\",\"texts\":{},\"namespace\":\"apps/test.app/changes/\",\"projectId\":\"test.app\",\"creation\":0,\"originalLanguage\":\"\",\"support\":{\"generator\":\"changeUtils: ava test\",\"service\":\"\",\"user\":\"\",\"sourceChangeFileName\":\"\",\"compositeCommand\":\"\"},\"oDataInformation\":{},\"dependentSelector\":{},\"validAppVersions\":{\"from\":\"1.0.0\",\"to\":\"1.0.0\",\"creation\":\"1.0.0\"},\"jsOnly\":false,\"variantReference\":\"\",\"appDescriptorChange\":false}", "then the change string is generated correct");
 });
 
 test("changeUtils toString strigifies a change again (id, reference, appVersion provided; manifest not provided)", (t) => {
 	const stringifiedChange = changeUtils.toString(completeChange);
-	t.deepEqual(stringifiedChange, "{\"fileName\":\"id_123_0_propertyChange\",\"fileType\":\"change\",\"changeType\":\"propertyChange\",\"moduleName\":\"\",\"reference\":\"test.app\",\"packageName\":\"\",\"content\":{\"property\":\"exportToExcel\",\"newValue\":true},\"selector\":{\"id\":\"myTable\",\"idIsLocal\":true},\"layer\":\"CUSTOMER_BASE\",\"texts\":{},\"namespace\":\"apps/test.app/changes/\",\"projectId\":\"\",\"creation\":1585730948833,\"originalLanguage\":\"\",\"support\":{\"generator\":\"changeUtils: ava test\",\"service\":\"\",\"user\":\"\",\"sourceChangeFileName\":\"\",\"compositeCommand\":\"\"},\"oDataInformation\":{},\"dependentSelector\":{},\"validAppVersions\":{\"from\":\"1.0.0\",\"to\":\"1.0.0\",\"creation\":\"1.0.0\"},\"jsOnly\":false,\"variantReference\":\"\",\"appDescriptorChange\":false}", "then the change string is generated correct");
+	t.deepEqual(stringifiedChange, "{\"fileName\":\"id_123_0_propertyChange\",\"fileType\":\"change\",\"changeType\":\"propertyChange\",\"moduleName\":\"\",\"reference\":\"test.app\",\"packageName\":\"\",\"content\":{\"property\":\"exportToExcel\",\"newValue\":true},\"selector\":{\"id\":\"myTable\",\"idIsLocal\":false,\"type\":\"sap.m.Table\"},\"layer\":\"CUSTOMER_BASE\",\"texts\":{},\"namespace\":\"apps/test.app/changes/\",\"projectId\":\"\",\"creation\":1585730948833,\"originalLanguage\":\"\",\"support\":{\"generator\":\"changeUtils: ava test\",\"service\":\"\",\"user\":\"\",\"sourceChangeFileName\":\"\",\"compositeCommand\":\"\"},\"oDataInformation\":{},\"dependentSelector\":{},\"validAppVersions\":{\"from\":\"1.0.0\",\"to\":\"1.0.0\",\"creation\":\"1.0.0\"},\"jsOnly\":false,\"variantReference\":\"\",\"appDescriptorChange\":false}", "then the change string is generated correct");
 });
