@@ -12,14 +12,26 @@
     "tool",
     "ui5 flexibility"
   ],
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sap/ui5-flexibility-utils"
+    "url": "https://github.com/SAP/ui5-flexibility-utils.git"
   },
   "scripts": {
     "test": "ava test/**/*.js",
-    "jsdoc": "node_modules/.bin/jsdoc -c ./.jsdoc.config.json -d jsdoc -R README.md"
+    "jsdoc": "node_modules/.bin/jsdoc -c ./.jsdoc.config.json -d jsdoc -R README.md",
+    "preversion": "npm test",
+    "version": "git-chglog --next-tag v$npm_package_version -o CHANGELOG.md && git add CHANGELOG.md",
+    "postversion": "git push --follow-tags",
+    "release-note": "git-chglog -c .chglog/release-config.yml v$npm_package_version"
   },
+  "files": [
+    "index.js",
+    "CONTRIBUTING.md",
+    "THIRD-PARTY-NOTICES.txt",
+    ".jsdoc.config.json",
+    "src/**"
+  ],
   "dependencies": {},
   "devDependencies": {
     "ava": "^3.6.0",
