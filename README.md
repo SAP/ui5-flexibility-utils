@@ -1,5 +1,7 @@
 # @ui5/flexibility-utils
 
+[![npm Package Version](https://badge.fury.io/js/%40ui5%2Fflexibility-utils.svg)](https://www.npmjs.com/package/@ui5/flexibility-utils)
+
 ## Description
 This project provides an API to create SAPUI5 flexibility change files outside of a OpenUI5 and SAPUI5 runtime.
 
@@ -10,7 +12,7 @@ This API allows you to create UI5 flexibility changes without a UI5 runtime, and
 
 ## Installation
 ~~~
-npm install --global @ui5/flexibility-utils
+npm install @ui5/flexibility-utils
 ~~~
 
 ## Usage
@@ -32,6 +34,6 @@ No issues are currently known.
 ## How to obtain support
 In case you need any support, please create a GitHub issue.
 
-License
+## License
 Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This file and all other files in this repository are licensed under the Apache License, v 2.0 except as noted otherwise in the [LICENSE file](LICENSE.txt).
 
