@@ -48,7 +48,7 @@ function getProjectId(manifest, reference) {
 		manifest &&
 		manifest["sap.app"] &&
 		manifest["sap.app"].sourceTemplate &&
-		manifest["sap.app"].sourceTemplate.id === "ui5template.smartTemplate"
+		["ui5template.smartTemplate", "ui5template.smarttemplate"].includes(manifest["sap.app"].sourceTemplate.id)
 	) {
 		return reference;
 	}
@@ -146,17 +146,11 @@ module.exports = {
 			!change.fileName ||
 			!change.changeType ||
 			!change.selector ||
-			!change.selector.id ||
 			!change.reference ||
-			!change.validAppVersions ||
-			!change.validAppVersions.creation ||
+			!change.creation ||
 			!change.content ||
 			!change.layer ||
-			!change.projectId ||
-			!change.support ||
-			!change.support.sapui5Version ||
-			!change.support.generator ||
-			!change.creation
+			!change.support
 		) {
 			throw Error("Parsed object does not contain all required parameters");
 		}
