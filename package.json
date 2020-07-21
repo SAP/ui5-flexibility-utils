@@ -1,6 +1,6 @@
 {
   "name": "@ui5/flexibility-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Utils functions for creating and reading UI5 flexibility entities without a run time",
   "author": "SAP SE (https://www.sap.com)",
   "license": "Apache-2.0",
