@@ -158,7 +158,7 @@ module.exports = {
 		return {
 			id: change.fileName,
 			reference: change.reference,
-			appVersion: change.validAppVersions.creation,
+			appVersion: change.validAppVersions ? change.validAppVersions.creation : "",
 			creation: change.creation,
 			projectId: change.projectId,
 			type: change.changeType,
