@@ -1,6 +1,7 @@
 # @ui5/flexibility-utils
 
 [![npm Package Version](https://badge.fury.io/js/%40ui5%2Fflexibility-utils.svg)](https://www.npmjs.com/package/@ui5/flexibility-utils)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/ui5-flexibility-utils)](https://api.reuse.software/info/github.com/SAP/ui5-flexibility-utils)
 
 ## Description
 This project provides an API to create SAPUI5 flexibility change files outside of a OpenUI5 and SAPUI5 runtime.
