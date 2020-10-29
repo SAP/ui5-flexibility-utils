@@ -3,3 +3,8 @@
 In the event that we overlooked to list required notice, please bring this to our attention by contacting us via this email: opensource@sap.com
 
 ------------------------------------------------------------------------------------------
+
+Component: google-code-prettify 20130304
+Copyright: 2006 Google Inc.
+License: Apache-2.0
+License Text: https://github.com/SAP/openui5/blob/master/LICENSES/Apache-2.0.txt
