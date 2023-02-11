@@ -34,7 +34,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "ava": "^3.6.0",
+    "ava": "^5.2.0",
     "jsdoc": "^3.6.4"
   }
 }
