@@ -32,7 +32,7 @@ version = 1
 
 [[annotations]]
 path = "**"
-SPDX-FileCopyrightText = "2026 SAP SE or an SAP affiliate company and SAP/ui5-flexibility-utils contributors"
+SPDX-FileCopyrightText = "2020-2026 SAP SE or an SAP affiliate company and ui5-flexibility-utils contributors"
 SPDX-License-Identifier = "Apache-2.0"
 
 [[annotations]]
